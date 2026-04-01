@@ -1,0 +1,55 @@
+DAILY GIT CHEAT SHEET
+
+1. Before starting work
+git pull
+git status
+git branch --show-current
+
+2. Check what changed
+git status
+git diff
+
+3. Save your work
+git add test2.html
+git commit -m "Update test page"
+
+4. Push to GitHub
+git push
+
+5. If confused, run these
+git status
+git remote -v
+git config --get user.email
+git log --oneline -5
+
+6. Branch basics
+git branch
+git checkout -b new-branch-name
+git checkout main
+git push -u origin new-branch-name
+
+7. Common meanings
+modified = file changed
+untracked = new file not added yet
+ahead 1 = committed locally, not pushed yet
+working tree clean = everything is saved
+
+8. Best habits
+Always run git status
+Check branch before pushing
+Pull before starting
+Commit small changes
+Avoid force-push unless necessary
+
+9. Panic recovery
+git status
+git branch --show-current
+git remote -v
+git log --oneline -5
+
+10. Daily flow
+git pull
+git status
+git add .
+git commit -m "Your message"
+git push
