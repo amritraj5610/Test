@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Check Page</title>
+  <style>
+    :root {
+      --bg1: #0f172a;
+      --bg2: #1d4ed8;
+      --card: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --accent: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    }
+
+    .card {
+      width: min(90vw, 560px);
+      padding: 2rem;
+      border-radius: 24px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    p {
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    button {
+      margin-top: 1rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.9rem 1.4rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent);
+      color: #111827;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(245, 158, 11, 0.35);
+    }
+
+    .status {
+      margin-top: 1.2rem;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>GitHub Check</h1>
+    <p>
+      This is a random HTML test page with a little style and JavaScript so you
+      can confirm your GitHub workflow is picking up changes correctly.
+    </p>
+    <button id="checkBtn">Click to Update Status</button>
+    <div class="status" id="statusBox">
+      Waiting for interaction...
+    </div>
+  </main>
+
+  <script>
+    const button = document.getElementById("checkBtn");
+    const statusBox = document.getElementById("statusBox");
+
+    button.addEventListener("click", () => {
+      const now = new Date().toLocaleString();
+      statusBox.textContent = `Button clicked successfully at ${now}.`;
+    });
+  </script>
+</body>
+</html>
