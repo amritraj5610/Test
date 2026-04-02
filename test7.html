@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 7 Page</title>
+    <style>
+        :root {
+            --bg-start: #fff7ed;
+            --bg-end: #fee2e2;
+            --card: rgba(255, 255, 255, 0.9);
+            --text: #1f2937;
+            --accent: #ea580c;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 1.5rem;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+        }
+
+        .card {
+            width: min(92vw, 520px);
+            padding: 2rem;
+            border-radius: 24px;
+            background: var(--card);
+            box-shadow: 0 18px 40px rgba(31, 41, 55, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            border-radius: 999px;
+            padding: 0.85rem 1.3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: white;
+            background: var(--accent);
+        }
+
+        .message {
+            margin-top: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            background: #ffedd5;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>Test 7 Ready</h1>
+        <p>This page was created for your next GitHub deployment check.</p>
+        <button id="launchButton">Run Test 7</button>
+        <div class="message" id="messageBox">Waiting to run.</div>
+    </main>
+
+    <script>
+        const launchButton = document.getElementById("launchButton");
+        const messageBox = document.getElementById("messageBox");
+
+        launchButton.addEventListener("click", () => {
+            const timestamp = new Date().toLocaleString();
+            messageBox.textContent = `Test 7 ran successfully at ${timestamp}.`;
+        });
+    </script>
+</body>
+</html>
